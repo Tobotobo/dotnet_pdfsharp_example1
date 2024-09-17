@@ -14,9 +14,6 @@ https://github.com/empira/pdfsharp
 PDFsharpは、任意の .NET 言語から PDF ドキュメントを簡単に作成して処理できるオープン ソースの .NET ライブラリです。  
 同じ描画ルーチンを使用して、PDF ドキュメントを作成したり、画面に描画したり、任意のプリンタに出力を送信したりできます。  
 
-MigraDocで2バイト文字が自動改行されない問題について海外のサイトを調査してください。
-※文字化けのことではありませんので留意してください。
-
 ### MigraDoc Foundation
 MigraDoc Foundation は、段落、表、スタイルなどを含むオブジェクト モデルに基づいてドキュメントを簡単に作成し、PDF または RTF にレンダリングするオープン ソースの .NET ライブラリです。
 
@@ -50,6 +47,15 @@ dotnet add package PDFsharp-MigraDoc --version 6.2.0-preview-1
 
 ```
 dotnet run
+```
+
+日本語で自動改行が有効にならない問題  
+→ 単語毎 or 1文字毎にゼロ幅スペース（Zero Width Space, ZWSP, U+200B）を結合する
+
+↓1文字毎の例
+```cs
+var text = "吾輩は猫である。名前はまだない。 どこで生れたか頓（とん）と見当がつかぬ。";
+var text2 = String.Join('\u200B', text.ToCharArray());
 ```
 
 ## スクリーンショット
