@@ -14,8 +14,15 @@ https://github.com/empira/pdfsharp
 PDFsharpは、任意の .NET 言語から PDF ドキュメントを簡単に作成して処理できるオープン ソースの .NET ライブラリです。  
 同じ描画ルーチンを使用して、PDF ドキュメントを作成したり、画面に描画したり、任意のプリンタに出力を送信したりできます。  
 
+MigraDocで2バイト文字が自動改行されない問題について海外のサイトを調査してください。
+※文字化けのことではありませんので留意してください。
+
 ### MigraDoc Foundation
 MigraDoc Foundation は、段落、表、スタイルなどを含むオブジェクト モデルに基づいてドキュメントを簡単に作成し、PDF または RTF にレンダリングするオープン ソースの .NET ライブラリです。
+
+### 参考
+* PDFSharp MigraDoc を使ってC#でPDF生成  
+  https://2ndgd.blogspot.com/2018/07/pdfsharp-migradoc-cpdf.html
 
 ## 環境
 
@@ -50,3 +57,5 @@ dotnet run
 ![alt text](images/README/image-1.png)
 
 ![alt text](images/README/image.png)
+
+![alt text](images/README/image-2.png)
