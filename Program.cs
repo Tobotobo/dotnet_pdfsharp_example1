@@ -7,7 +7,9 @@ GlobalFontSettings.FontResolver = new MyFontResolver();
 // MigraDocHelloWorld.Run();
 // MigraDocTable.Run();
 // MigraDocTable2.Run();
-MigraDocReport.Run();
+// MigraDocReport.Run();
+// MigraDocChart.Run();
+MigraDocChart2.Run();
 
 // const char SOFT_HYPHEN = '\u00AD';
 // string text = "aaabbb";

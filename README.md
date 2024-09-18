@@ -74,3 +74,13 @@ MigraDocTable2
 
 MigraDocReport  
 ![alt text](images/README/image-5.png)
+
+MigraDocChart  
+![alt text](images/README/image-6.png)
+
+MigraDocChart2  
+![alt text](images/README/image-7.png)  
+
+![alt text](images/README/image-8.png)
+
+![alt text](images/README/image-9.png)

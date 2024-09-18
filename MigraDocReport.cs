@@ -35,60 +35,11 @@ public static class MigraDocReport
         // フッター作成
         SetupFooter(section.Footers.Primary, effectivePageWidth);
 
-        // 透かし追加
-        // SetupWatermark(section);
-
         // 本文
         WriteBody(document, effectivePageWidth);
 
         // 保存
         SavePdfDocument(document);
-    }
-
-    private static void SetupWatermark(Section section) {
-        // // 透かし用のTextFrameを作成
-        // TextFrame watermarkFrame = section.Headers.Primary.AddTextFrame();
-        // watermarkFrame.Orientation = TextOrientation.;
-        // watermarkFrame.Width = Unit.FromCentimeter(20); // フレームの幅
-        // watermarkFrame.Height = Unit.FromCentimeter(20); // フレームの高さ
-        // watermarkFrame.RelativeVertical = RelativeVertical.Page;
-        // watermarkFrame.RelativeHorizontal = RelativeHorizontal.Page;
-        // watermarkFrame.Top = ShapePosition.Center;
-        // watermarkFrame.Left = ShapePosition.Center;
-
-        // // 透かしテキストを追加
-        // var watermark = watermarkFrame.AddParagraph("透かしテキスト");
-        // watermark.Format.Font.Size = 80; // 大きなフォントサイズ
-        // watermark.Format.Font.Color = Colors.LightGray; // 薄いグレー色
-        // watermark.Format.Alignment = ParagraphAlignment.Center; // 中央揃え
-        // watermark.Format.Font.Bold = true;
-
-        // // 傾ける場合（45度の角度をつける）
-        // watermarkFrame.WrapFormat.Style = WrapStyle.None;
-        // watermarkFrame.LineFormat.Color = Colors.LightGray;
-        // watermarkFrame.RelativeVertical = RelativeVertical.Page;
-        // watermarkFrame.RelativeHorizontal = RelativeHorizontal.Page;
-        // watermarkFrame.R
-        // // watermarkFrame.FillFormat.Opacity = 50; // 透過性を設定
-
-
-        // // 透かしテキストの作成
-        // var watermark = section.Headers.Primary.AddParagraph();
-        // watermark.AddFormattedText("開発中", TextFormat.Bold);
-        // watermark.Format.Font.Size = 80; // フォントサイズ
-        // watermark.Format.Font.Color = Colors.LightGray; // 薄いグレー色
-        // watermark.Format.Alignment = ParagraphAlignment.Center; // 中央揃え
-        // watermark.Format.Font.Bold = true;
-
-        // // 透かしテキストの位置と回転を調整
-        // watermark.Format.SpaceBefore = Unit.FromCentimeter(10); // 上部にスペースを設定してセンターに配置
-        // watermark.Format.Font.Color = Colors.LightGray;
-        // watermark.Format.Font.Size = 100;
-        // watermark.Format.Font.Bold = true;
-        // watermark.Format.LeftIndent = Unit.FromCentimeter(0);
-        // watermark.Format.RightIndent = Unit.FromCentimeter(0);
-        // watermark.Format.Borders.DistanceFromTop = 0;
-        // watermark.Format.Borders.DistanceFromBottom = 0;
     }
 
     private static void WriteBody(Document document, Unit effectivePageWidth) {
@@ -403,9 +354,9 @@ public static class MigraDocReport
                     var size = gfx.MeasureString(watermark, font);
  
                     // Define a rotation transformation at the center of the page.
-                    gfx.TranslateTransform(page.Width / 2, page.Height / 2);
-                    gfx.RotateTransform(-Math.Atan(page.Height / page.Width) * 180 / Math.PI);
-                    gfx.TranslateTransform(-page.Width / 2, -page.Height / 2);
+                    gfx.TranslateTransform(page.Width.Point / 2, page.Height.Point / 2);
+                    gfx.RotateTransform(-Math.Atan(page.Height.Point / page.Width.Point) * 180 / Math.PI);
+                    gfx.TranslateTransform(-page.Width.Point / 2, -page.Height.Point / 2);
  
                     // Create a string format.
                     var format = new XStringFormat();
@@ -417,7 +368,7 @@ public static class MigraDocReport
  
                     // Draw the string.
                     gfx.DrawString(watermark, font, brush,
-                        new XPoint((page.Width - size.Width) / 2, (page.Height - size.Height) / 2),
+                        new XPoint((page.Width.Point - size.Width) / 2, (page.Height.Point - size.Height) / 2),
                         format);
 
                 
