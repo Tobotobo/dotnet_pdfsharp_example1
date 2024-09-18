@@ -18,8 +18,9 @@ PDFsharpは、任意の .NET 言語から PDF ドキュメントを簡単に作�
 MigraDoc Foundation は、段落、表、スタイルなどを含むオブジェクト モデルに基づいてドキュメントを簡単に作成し、PDF または RTF にレンダリングするオープン ソースの .NET ライブラリです。
 
 ### 参考
-* PDFSharp MigraDoc を使ってC#でPDF生成  
-  https://2ndgd.blogspot.com/2018/07/pdfsharp-migradoc-cpdf.html
+* [PDFSharp MigraDoc を使ってC#でPDF生成](https://2ndgd.blogspot.com/2018/07/pdfsharp-migradoc-cpdf.html)  
+* [PDFsharp：ページのヘッダーに「Page X of Y」を生成する方法はありますか？](https://www.web-dev-qa-db-ja.com/ja/c%23/pdfsharp%EF%BC%9A%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%98%E3%83%83%E3%83%80%E3%83%BC%E3%81%AB%E3%80%8Cpage-x-of-y%E3%80%8D%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%E3%81%AF%E3%81%82%E3%82%8A%E3%81%BE%E3%81%99%E3%81%8B%EF%BC%9F/1041644383/)  
+  
 
 ## 環境
 
@@ -60,8 +61,13 @@ var text2 = String.Join('\u200B', text.ToCharArray());
 
 ## スクリーンショット
 
+PdfsharpHelloWorld  
 ![alt text](images/README/image-1.png)
 
+MigraDocHelloWorld  
 ![alt text](images/README/image.png)
 
-![alt text](images/README/image-2.png)
+MigraDocTable2  
+![alt text](images/README/image-3.png)
+
+![alt text](images/README/image-4.png)
