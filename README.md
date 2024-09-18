@@ -71,3 +71,6 @@ MigraDocTable2
 ![alt text](images/README/image-3.png)
 
 ![alt text](images/README/image-4.png)
+
+MigraDocReport  
+![alt text](images/README/image-5.png)
